@@ -4,6 +4,7 @@ const fs = require("fs-extra");
 const path = require("path");
 const logger = require("morgan");
 const rootDir = path.join(__dirname, "www");
+const PORT = process.env.PORT || 4001;
 
 app.use(logger("dev"));
 
@@ -63,6 +64,6 @@ app
     res.end();
   });
 
-app.listen(4001, function () {
-  console.log("Http put is listening on port 4001");
+app.listen(PORT, function () {
+  console.log(`Http put is listening on port ${PORT}`);
 });

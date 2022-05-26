@@ -33,7 +33,7 @@ app
     });
   })
   .delete(async (req, res) => {
-    let absolutePath = path.resolve(rootDir, req.path);
+    let absolutePath = path.join(rootDir, req.path);
 
     if (req.query.recursive) {
       async function recursiveRm(pathname) {
